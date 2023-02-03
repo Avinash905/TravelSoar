@@ -5,7 +5,7 @@ import { DateRangePicker } from "react-date-range";
 import { format } from "date-fns";
 import "../styles/hotels.css";
 import "../styles/hotelrange.css";
-import useFetch from "../hooks/useFetch";
+import { useFetchNoUrl } from "../hooks/useFetch";
 import { SearchContext } from "../context/searchContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -25,11 +25,11 @@ function Hotels() {
     children: state.options.children,
     rooms: state.options.rooms,
     minprice: 0,
-    maxprice: 10000,
+    maxprice: 999999,
     destination: state.destination,
   });
   const [openDate, setOpenDate] = useState(false);
-  const { data, loading, refetchData } = useFetch(
+  const { data, loading, refetchData } = useFetchNoUrl(
     `/hotel/getallhotels?city=${options.destination}&min=${options.minprice}&max=${options.maxprice}`
   );
 

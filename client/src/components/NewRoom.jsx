@@ -35,7 +35,6 @@ function NewRoom() {
         return toast.error("Input field should not be empty");
       }
       const rooms = roomNumbers.split(",").map((ele) => ({ number: ele }));
-      console.log("roomNumbers", rooms);
       const { data } = await toast.promise(
         axios.post(
           `/room/createroom/${hotelId}`,

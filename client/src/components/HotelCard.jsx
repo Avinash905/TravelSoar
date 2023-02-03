@@ -3,6 +3,10 @@ import { NavLink } from "react-router-dom";
 import "../styles/hotelcard.css";
 
 function HotelCard({ ele }) {
+  const splitDesc = (desc) => {
+    return desc.length > 231 ? `${desc.slice(0, 231)}...` : desc;
+  };
+
   return (
     <div className="hotel-card">
       <div className="card-img-container flex-center">
@@ -18,7 +22,7 @@ function HotelCard({ ele }) {
         <h4 className="card-hotel-sub-heading">
           Studio appartment with air conditioning
         </h4>
-        <p>{ele.desc}</p>
+        <p>{splitDesc(ele.desc)}</p>
         <span className="green-color-bold">
           Free cancellation • No prepayment needed
         </span>

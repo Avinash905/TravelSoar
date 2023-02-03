@@ -3,7 +3,7 @@ import "../styles/propertytype.css";
 import useFetch from "../hooks/useFetch";
 
 function Featured() {
-  const { data, loading, error } = useFetch(
+  const { data, loading } = useFetch(
     "/hotel/countbycity?city=delhi,mumbai,chennai"
   );
 
@@ -25,7 +25,7 @@ function Featured() {
   return (
     <section className="property-type-section">
       {loading ? (
-        <h2 className="loading">Loading...</h2>
+        <></>
       ) : (
         <div className="property-type-container">
           <h2>Featured Places</h2>
