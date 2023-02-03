@@ -1,0 +1,17 @@
+@import url(app.css);
+
+.new-user-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.new-user-container .register-container {
+  width: 80% !important;
+}
+
+@media (max-width: 910px) {
+  .new-user-container .register-container {
+    width: 100% !important;
+    text-align: center;
+  }
+}

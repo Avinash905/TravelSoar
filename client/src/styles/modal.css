@@ -1,0 +1,67 @@
+@import url(app.css);
+
+.modal-section {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
+.modal-container {
+  background-color: var(--light-white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-room-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.modal-heading {
+  font-size: 1.4rem;
+}
+
+.modal-room-price {
+  font-weight: bold;
+}
+
+.modal-room {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.modal-room-heading {
+  font-size: 1.2rem;
+}
+
+.modal-room-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-room-number-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-room-number-container label {
+  color: var(--gray-color);
+}

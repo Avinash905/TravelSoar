@@ -1,0 +1,42 @@
+@import url(app.css);
+
+.contact-section {
+  background-color: var(--primary-color);
+  color: var(--light-white);
+  height: 25vh;
+}
+
+.contact-container {
+  width: 75vw;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-text {
+  gap: 0.3rem;
+  flex-direction: column;
+}
+
+.contact-text span {
+  color: var(--light-white);
+}
+
+.contact-input {
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 5px;
+}
+
+.contact-input-container {
+  gap: 0.3rem;
+}
+
+.contact-btn {
+  border-radius: 5px;
+  background-color: var(--tertiary-color);
+  border: 2px solid var(--tertiary-color);
+}
+
+.contact-btn:hover {
+  border: 2px solid var(--tertiary-color);
+}

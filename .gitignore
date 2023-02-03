@@ -34,8 +34,6 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
 
 # Dependency directories
 node_modules/
@@ -102,3 +100,7 @@ dist
 
 # TernJS port file
 .tern-port
+/.vscode
+/client/.env
+/node_modules
+/client/node_modules

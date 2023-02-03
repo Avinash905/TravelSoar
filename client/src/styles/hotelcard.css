@@ -1,0 +1,94 @@
+@import url(app.css);
+
+.hotel-card {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--gray-color);
+}
+
+.card-img-container {
+  flex: 1;
+}
+
+.card-img-container img {
+  width: 100%;
+}
+
+.card-hotel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 2;
+}
+
+.card-hotel-heading {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+
+.card-hotel-distance {
+  color: var(--gray-color);
+}
+
+.card-hotel-badge {
+  background-color: var(--tertiary-color);
+  color: var(--light-white);
+  width: max-content;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.green-color-bold {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.green-color {
+  color: var(--gray-color);
+}
+
+.card-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card-amount-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-hotel-praise {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-hotel-rating {
+  background-color: var(--secondary-color);
+  color: var(--light-white);
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.4rem;
+}
+
+.card-amount-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.card-hotel-price {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-tax-text {
+  color: var(--gray-color);
+}

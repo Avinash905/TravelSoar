@@ -1,0 +1,40 @@
+@import url(app.css);
+
+.dashboard-main-container {
+  margin: 0 auto;
+  width: 75vw;
+}
+
+.main-container-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-main-container h2 {
+  margin: 1rem 0;
+  text-transform: capitalize;
+}
+
+.del-btn {
+  font-size: 0.9rem;
+  padding: 0.2rem 0.6rem;
+}
+
+@media (max-width: 910px) {
+  .dashboard-main-container {
+    width: 82vw;
+  }
+}
+
+@media (max-width: 590px) {
+  .dashboard-main-container {
+    width: 78vw;
+  }
+}
+
+@media (max-width: 415px) {
+  .dashboard-main-container {
+    width: 72vw;
+  }
+}

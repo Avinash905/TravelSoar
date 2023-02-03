@@ -1,0 +1,88 @@
+@import url(app.css);
+
+.single-container {
+  width: 75vw;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.single-container-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-top-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.single-heading {
+  font-size: 1.8rem;
+}
+
+.single-location-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.single-location {
+  color: var(--gray-color);
+}
+
+.single-direction {
+  color: var(--primary-color);
+}
+
+.single-image-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.single-image-container img {
+  border-radius: 5px;
+  width: 30%;
+  flex: 1;
+}
+
+.single-container-bottom {
+  display: flex;
+  gap: 1rem;
+}
+
+.single-hotel-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.single-hotel-desc h3,
+.single-price-cont h3 {
+  font-size: 1.5rem;
+  width: max-content;
+}
+
+.single-price-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  background-color: #ffebe2;
+  padding: 2rem 1.5rem;
+  border-radius: 2px;
+}
+
+.single-price {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 770px) {
+  .single-container-bottom {
+    flex-direction: column;
+  }
+}
