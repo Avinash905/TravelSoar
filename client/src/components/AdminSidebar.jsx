@@ -88,7 +88,7 @@ function AdminSidebar() {
       <div className="sidebar-main-container">
         <h4>user</h4>
         <div className="sidebar-main">
-          <NavLink to={"/dashboard/profile"}>
+          <NavLink to={"/profile"}>
             <HiOutlineUserCircle />
             <span>profile</span>
           </NavLink>

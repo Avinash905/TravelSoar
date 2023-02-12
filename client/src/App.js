@@ -25,7 +25,12 @@ function App() {
 
   const Protected = ({ children }) => {
     if (!user.isAdmin) {
-      return <Navigate replace={true} to="/login"></Navigate>;
+      return (
+        <Navigate
+          replace={true}
+          to="/login"
+        ></Navigate>
+      );
     }
     return children;
   };
@@ -34,16 +39,32 @@ function App() {
     <Router>
       <Toaster />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/hotels"
+          element={<Hotels />}
+        />
+        <Route
+          path="/login"
+          element={<Login />}
+        />
         <Route
           path="/register"
           element={
-            <Register title={"Sign up"} signup={true} btntext={"sign up"} />
+            <Register
+              title={"Sign up"}
+              signup={true}
+              btntext={"sign up"}
+            />
           }
         />
-        <Route path="/hotel/:id" element={<SingleHotel />} />
+        <Route
+          path="/hotel/:id"
+          element={<SingleHotel />}
+        />
         <Route
           path="/dashboard/user"
           element={
@@ -77,12 +98,8 @@ function App() {
           }
         />
         <Route
-          path="/dashboard/profile"
-          element={
-            <Protected>
-              <Profile />
-            </Protected>
-          }
+          path="/profile"
+          element={<Profile />}
         />
         <Route
           path="/dashboard/newhotel"

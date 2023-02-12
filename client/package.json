@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "proxy": "https://travelsoar.onrender.com/api",
-  "homepage":"https://travelsoar.onrender.com/",
+  "homepage": "https://travelsoar.onrender.com/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

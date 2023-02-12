@@ -158,14 +158,22 @@ function Hotels() {
                   />
                 </div>
               </div>
-              <button className="btn btn-header" onClick={btnHandler}>
+              <button
+                className="btn btn-header"
+                onClick={btnHandler}
+              >
                 search
               </button>
             </div>
 
             <div className="hotel-cards-container">
               {data?.map((ele, i) => {
-                return <HotelCard key={i} ele={ele} />;
+                return (
+                  <HotelCard
+                    key={i}
+                    ele={ele}
+                  />
+                );
               })}
             </div>
           </div>

@@ -61,7 +61,7 @@ const useFetchNoUrl = (url) => {
       setLoading(false);
     };
     fetchData();
-  }, [url]);
+  }, []);
 
   const refetchData = async () => {
     setLoading(true);

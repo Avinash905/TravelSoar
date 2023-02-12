@@ -24,7 +24,10 @@ function Navbar() {
       <div className="navbar-container">
         <div className="navbar-top">
           <h2>
-            <NavLink to={"/"} className="navbar-title">
+            <NavLink
+              to={"/"}
+              className="navbar-title"
+            >
               TravelSoar
             </NavLink>
           </h2>
@@ -32,17 +35,31 @@ function Navbar() {
           <div className="navbar-top-btn-container flex-center">
             {user ? (
               <>
-                <h2 className="navbar-name">{user.username}</h2>
-                <button className="btn btn-invert" onClick={logout}>
+                <NavLink
+                  to={"/profile"}
+                  className="btn btn-invert"
+                >
+                  {user.username}
+                </NavLink>
+                <button
+                  className="btn btn-invert"
+                  onClick={logout}
+                >
                   logout
                 </button>
               </>
             ) : (
               <>
-                <NavLink className="btn btn-invert" to={"/login"}>
+                <NavLink
+                  className="btn btn-invert"
+                  to={"/register"}
+                >
                   register
                 </NavLink>
-                <NavLink className="btn btn-invert" to={"/login"}>
+                <NavLink
+                  className="btn btn-invert"
+                  to={"/login"}
+                >
                   sign in
                 </NavLink>
               </>

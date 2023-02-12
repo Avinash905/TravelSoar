@@ -3,11 +3,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/register.css";
 import axios from "axios";
 import toast from "react-hot-toast";
+import convertToBase64 from "../utils/convertImage";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 function Register({ title, signup, btntext }) {
   const navigate = useNavigate();
+  const [file, setFile] = useState("");
   const [formDetails, setFormDetails] = useState({
     username: "",
     email: "",
@@ -25,6 +27,11 @@ function Register({ title, signup, btntext }) {
     });
   };
 
+  const onUpload = async (e) => {
+    const base64 = await convertToBase64(e.target.files[0]);
+    setFile(base64);
+  };
+
   const formSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -34,6 +41,10 @@ function Register({ title, signup, btntext }) {
       } else if (password.length < 5) {
         return toast.error("Password must be at least 5 characters long");
       }
+      const img =
+        file === ""
+          ? "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+          : file;
       const { data } = await toast.promise(
         axios.post("/auth/register", {
           username,
@@ -42,6 +53,7 @@ function Register({ title, signup, btntext }) {
           phone,
           email,
           password,
+          img,
         }),
         {
           pending: "Registering user...",
@@ -61,7 +73,10 @@ function Register({ title, signup, btntext }) {
     <section className="register-section flex-center">
       <div className="register-container flex-center">
         <h2 className="form-heading">{title}</h2>
-        <form onSubmit={formSubmit} className="register-form">
+        <form
+          onSubmit={formSubmit}
+          className="register-form"
+        >
           <input
             type="text"
             name="username"
@@ -95,12 +110,19 @@ function Register({ title, signup, btntext }) {
             onChange={inputChange}
           />
           <input
-            type="text"
+            type="number"
             name="phone"
             className="form-input"
             placeholder="Enter your phone number"
             value={formDetails.phone}
             onChange={inputChange}
+          />
+          <input
+            type="file"
+            onChange={onUpload}
+            name="profile-pic"
+            id="profile-pic"
+            className="form-input"
           />
           <input
             type="password"
@@ -110,14 +132,20 @@ function Register({ title, signup, btntext }) {
             value={formDetails.password}
             onChange={inputChange}
           />
-          <button type="submit" className="btn form-btn">
+          <button
+            type="submit"
+            className="btn form-btn"
+          >
             {btntext}
           </button>
         </form>
         {signup && (
           <p>
             Already a user?{" "}
-            <NavLink className="login-link" to={"/login"}>
+            <NavLink
+              className="login-link"
+              to={"/login"}
+            >
               Log in
             </NavLink>
           </p>

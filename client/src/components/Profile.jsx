@@ -6,6 +6,10 @@ import toast from "react-hot-toast";
 
 function Profile() {
   const userData = JSON.parse(localStorage.getItem("user"));
+  const [file, setFile] = useState(
+    userData.img ||
+      "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+  );
   const [formDetails, setFormDetails] = useState({
     username: userData.username || "",
     email: userData.email || "",
@@ -56,7 +60,8 @@ function Profile() {
           loading: "Registering user...",
         }
       );
-      setFormDetails({ ...formDetails, password: "" });
+      setFormDetails({ ...data, password: "" });
+      setFile(data.img);
       localStorage.setItem(
         "user",
         JSON.stringify({ ...data, password: undefined })
@@ -67,12 +72,20 @@ function Profile() {
 
   return (
     <div className="dashboard-container">
-      <AdminSidebar />
+      {userData.isAdmin ? <AdminSidebar /> : <></>}
       <div className="new-user-container flex-center">
         <section className="register-section flex-center">
           <div className="register-container flex-center">
-            <h2 className="form-heading">Admin Profile</h2>
-            <form onSubmit={formSubmit} className="register-form">
+            <h2 className="form-heading">Profile</h2>
+            <img
+              src={file}
+              alt="profile"
+              className="profile-pic"
+            />
+            <form
+              onSubmit={formSubmit}
+              className="register-form"
+            >
               <input
                 type="text"
                 name="username"
@@ -121,7 +134,10 @@ function Profile() {
                 value={formDetails.password}
                 onChange={inputChange}
               />
-              <button type="submit" className="btn form-btn">
+              <button
+                type="submit"
+                className="btn form-btn"
+              >
                 update
               </button>
             </form>

@@ -9,16 +9,16 @@ function Featured() {
 
   const cities = [
     {
-      img: "https://cf.bstatic.com/xdata/images/city/540x405/687157.webp?k=06b9ded0733baaca9efaa06a69ae4d0d74311d620280947ae909015e804028fb&o=",
-      name: "manchester",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/1920px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg",
+      name: "New York",
     },
     {
-      img: "https://cf.bstatic.com/xdata/images/xphoto/540x405/191445417.webp?k=158eec3229f0447f2259710f61b7190c8912fd6fcdf8bc95812346c78365d5db&o=",
-      name: "japan",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Mum103.png/1920px-Mum103.png",
+      name: "Mumbai",
     },
     {
-      img: "https://cf.bstatic.com/xdata/images/xphoto/540x405/188230751.webp?k=fda8afccc595289d56c0df5ad636313b3a1863838c4bc4f6b0ae71635c9fc61f&o=",
-      name: "chennai",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/1920px-Skyscrapers_of_Shinjuku_2009_January.jpg",
+      name: "Tokyo",
     },
   ];
 
@@ -32,8 +32,15 @@ function Featured() {
           <div className="property-type-images">
             {cities.map((ele, i) => {
               return (
-                <div className="property-type-img-cont " key={i}>
-                  <img src={ele.img} alt={ele.name} className="featured-img" />
+                <div
+                  className="property-type-img-cont "
+                  key={i}
+                >
+                  <img
+                    src={ele.img}
+                    alt={ele.name}
+                    className="featured-img"
+                  />
                   <h4 className="property-type-name featured-name">
                     {ele.name}
                   </h4>

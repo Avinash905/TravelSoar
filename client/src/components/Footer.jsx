@@ -51,7 +51,7 @@ function Footer() {
           <li>Guest houses</li>
         </ul>
       </div>
-      <p>Copyright © {new Date().getFullYear()} TravelSoar. Made with ❤️</p>
+      <p>@ {new Date().getFullYear()} TravelSoar. Made with ❤️</p>
     </footer>
   );
 }
